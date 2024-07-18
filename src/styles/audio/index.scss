@@ -1,0 +1,557 @@
+@import url('http://fonts.cdnfonts.com/css/monument-extended');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+// * {
+//   //   border: 1px solid black !important;
+// }
+#leo_audiopage {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0;
+  animation: leo_content_opcity 1s linear 1;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+@keyframes leo_content_opcity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.leo_banner {
+  height: calc(100vh - 56px);
+  overflow: hidden;
+  position: relative;
+}
+
+.leo_banner_title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.leo_circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  border: 5px solid #e67c31aa;
+  animation: beat 0.25s infinite alternate;
+  z-index: -1;
+}
+
+.leo_leftcircle {
+  left: 49%;
+}
+.leo_rightcircle {
+  left: 51%;
+  border: 5px solid #e88239a8;
+}
+.leo_midcircle {
+  top: 51%;
+  height: 510px;
+  width: 510px;
+  border: 5px solid #e88239b5;
+
+  z-index: 0;
+}
+.leo_back {
+  height: 450px;
+  width: 450px;
+  filter: blur(40px);
+  background-color: #bc581e8e;
+}
+@keyframes beat {
+  to {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+.leo_banner_title_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.leo_audio_title {
+  max-width: 550px;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.384));
+}
+.leo_banner_title_wrap p {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: white;
+  font-size: 17px;
+  letter-spacing: 5px;
+  text-shadow: 2px 4px 6px rgba(67, 67, 67, 0.637);
+  font-family: 'Monument Extended', sans-serif;
+}
+.leo_banner_title_wrap h2 {
+  text-align: center;
+  line-height: 55px;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  text-shadow: 2px 4px 6px rgba(42, 42, 42, 0.503);
+}
+
+/* main section */
+#leo_audiopage section {
+  max-width: 1140px;
+  margin: auto;
+}
+#leo_audiopage .leo_audio_mainpage {
+  position: relative;
+  margin-top: 97px;
+  margin-bottom: 150px;
+  padding-bottom: 150px;
+}
+.leo_audio_mainpage_title {
+  padding-top: 50px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+:root {
+  --td: 0.5s;
+  --d--h1: 0.1s;
+  --d--p: 0.4s;
+  --t--h1: calc(var(--td) + var(--d--h1));
+  --t--p: calc(var(--td) + var(--d--p));
+}
+.leo_audio_mainpage_title h2 {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  color: transparent;
+
+  animation: revealBlock_Orange 0s var(--t--h1) forwards;
+}
+.leo_audio_mainpage_title p {
+  font-size: 25px;
+  line-height: 35px;
+  position: relative;
+  overflow: hidden;
+  color: transparent;
+
+  animation: revealBlock_black 0s var(--t--p) forwards;
+}
+/* animations */
+@keyframes revealBlock_Orange {
+  100% {
+    color: #e88239;
+  }
+}
+@keyframes revealBlock_black {
+  100% {
+    color: black;
+  }
+}
+.leo_audio_mainpage_title h2::after,
+.leo_audio_mainpage_title p::after {
+  content: '';
+
+  width: 0%;
+  height: 100%;
+  padding-bottom: 4px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.leo_audio_mainpage_title h2::after {
+  background: #e88239;
+  animation: revealingIn var(--td) var(--d--h1) forwards,
+    revealingOut var(--td) var(--t--h1) forwards;
+}
+.leo_audio_mainpage_title p::after {
+  background: black;
+  animation: revealingIn var(--td) var(--d--p) forwards,
+    revealingOut var(--td) var(--t--p) forwards;
+}
+
+@keyframes revealingIn {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes revealingOut {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(101%);
+  }
+}
+.display_open {
+  display: block;
+}
+.display_none {
+  display: none;
+}
+
+.leo_audiopage_playbutton {
+  position: absolute;
+  left: 3%;
+  bottom: calc(100% + 16px);
+  cursor: pointer;
+  opacity: 0;
+}
+
+.leo_audiopage_playbutton_circle {
+  background-color: rgba(255, 158, 89, 0.84);
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  height: 160px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leo_audiopage_playbutton_circle div {
+  max-width: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leo_audiopage_playbutton_circletext {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  animation: circle_rotate 10s linear infinite;
+}
+
+@keyframes circle_rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* playlist */
+
+.leo_audiopage_playlist {
+  opacity: 0;
+  position: absolute;
+  width: 50%;
+  bottom: -30px;
+  right: 0;
+  transition: all 0.5s ease-in;
+}
+.leo_audiopage_playlist h2 {
+  color: #e88239;
+  font-size: 40px;
+  font-weight: 500;
+  padding-bottom: 25px;
+}
+.leo_audiopage_playlist h2 span {
+  font-size: 46px;
+  font-weight: 500;
+}
+
+.leo_carousell ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.leo_carousell li {
+  width: 32%;
+  padding-bottom: 15px;
+}
+.leo_carousell li a {
+  border-radius: 25px;
+  overflow: hidden;
+  display: block;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.readmore_button {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.leo_carousell li.readmore_button a {
+  height: 130px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: #6d7587;
+  border: #6d7587 2px solid;
+  border-radius: 20px;
+}
+.leo_carousell li.readmore_button {
+  font-size: 30px;
+}
+.leo_carousell li.readmore_button p {
+  font-weight: 600;
+
+  margin-bottom: 0;
+  font-size: 15px;
+}
+.leo_carousell li p {
+  line-height: 25px;
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+/* banner */
+.leo_banner_video_wrap {
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -99;
+  // background-color: #ef8c22;
+  background-color: #040404;
+
+  background-image: url('../../pages/audio/image/index/dust.png');
+}
+.leo_banner_carousell {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+
+  height: 500px;
+  overflow: hidden;
+  animation: scroll 14s linear infinite;
+}
+.leo_banner_img {
+  height: 100%;
+  width: 200px;
+  background-color: rgb(48, 48, 48);
+  margin: 0 10px;
+  color: chartreuse;
+  overflow: hidden;
+}
+
+#leo_audiopage .leo_banner_img img {
+  position: relative;
+  object-fit: cover;
+  height: 100%;
+}
+.leo_banner_img div {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+}
+.leo_banner_img div video {
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    transform: translateY(-50%) translateX(calc(-220px * 9));
+  }
+}
+.leo_banner_01,
+.leo_banner_04,
+.leo_banner_06,
+.leo_banner_08 {
+  height: 250px;
+}
+.leo_banner_03,
+.leo_banner_07 {
+  height: 350px;
+}
+.leo_banner_02,
+.leo_banner_05 {
+  height: 450px;
+}
+.leo_target_animate {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  width: 190%;
+  height: 190%;
+  // background-color: black;
+  // width: 1000px;
+  // height: 1000px;
+  // border-radius: 50%;
+}
+.leo_target_animate img {
+  opacity: 0.5;
+  animation: spin 20s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .leo_audio_mainpage_title {
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .leo_audiopage_playbutton {
+    left: 3%;
+  }
+  .leo_audiopage_playbutton_circle {
+    width: 100px;
+    height: 100px;
+  }
+  .leo_audiopage_playbutton_circletext {
+    width: 90px;
+    height: 90px;
+  }
+
+  .leo_audio_mainpage_title h2 {
+    font-size: 40px;
+    padding-bottom: 17px;
+  }
+  .leo_audio_mainpage_title p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .leo_audio_mainpage_title {
+    padding-right: 20px;
+  }
+  .leo_audiopage_playlist {
+    position: static;
+    width: 100%;
+    padding: 0 20px;
+    padding-top: 30px;
+  }
+  .leo_audiopage_playlist h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .leo_audiopage_playlist h2 span {
+    font-size: 35px;
+  }
+  .leo_banner_title_wrap p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .leo_circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .leo_midcircle,
+  .leo_back {
+    width: 310px;
+    height: 310px;
+  }
+  .leo_banner_title_wrap {
+    width: 100%;
+  }
+  .leo_audio_title {
+    max-width: 300px;
+  }
+  .leo_banner_title_wrap p {
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+  .leo_banner_title_wrap h2 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .leo_audiopage_playbutton {
+    left: 1%;
+    bottom: calc(100% + 12px);
+  }
+  .leo_audiopage_playbutton_circle {
+    width: 75px;
+    height: 75px;
+    border: none;
+  }
+  .leo_audiopage_playbutton_circletext {
+    width: 65px;
+    height: 65px;
+  }
+  #leo_audiopage .leo_audio_mainpage {
+    margin-top: 50px;
+  }
+  .leo_audio_mainpage_title {
+    padding-top: 0px;
+    margin-top: -20px;
+    padding-right: 5px;
+  }
+  .leo_audio_mainpage_title h2 {
+    font-size: 22px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+  }
+  .leo_audio_mainpage_title p {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .leo_audiopage_playlist h2 {
+    font-size: 22px;
+  }
+  .leo_audiopage_playlist h2 span {
+    font-size: 26px;
+  }
+  .readmore_button {
+    padding-top: 10px;
+  }
+  .leo_carousell li.readmore_button a {
+    padding: 10px 15px;
+    height: 90px;
+    width: 90px;
+  }
+  .leo_carousell li.readmore_button a svg {
+    display: none;
+  }
+  .leo_carousell li.readmore_button p {
+    font-size: 14px;
+  }
+}
+.leo_opcity1 {
+  opacity: 1;
+}
+//更改animate.css
+.animate__animated.animate__bounceIn {
+  --animate-duration: 1.8s;
+}

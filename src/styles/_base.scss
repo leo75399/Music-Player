@@ -1,0 +1,68 @@
+// team color
+$team-primary: #e88239;
+$team-secondary: #023a20;
+$team-info: #0965e0;
+$team-success: #5fae27;
+$team-warning: #f6c327;
+$team-error: #d43212;
+$team-white: #fff;
+
+// 1017 add
+$meetup-lightgreen: #f2faed; //for meetup create
+$meetup-lightgreen2: #eef4ef; //for meetup one
+
+// RWD breakpoint
+$team-bp-xs: 0px;
+$team-bp-sm: 576px;
+$team-bp-md: 768px;
+$team-bp-lg: 992px;
+$team-bp-xl: 1200px;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == team-xs {
+    // 0 px
+    @media only screen and (min-width: $team-bp-xs) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == team-sm {
+    // 576 px
+    @media only screen and (min-width: $team-bp-sm) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == team-md {
+    // 768 px
+    @media only screen and (min-width: $team-bp-md) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == team-lg {
+    // 992 px
+    @media only screen and (min-width: $team-bp-lg) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == team-xl {
+    // 1200 px
+    @media only screen and (min-width: $team-bp-xl) {
+      @content;
+    }
+  }
+}
+
+// NOTE WARN 取消全部bootstrap的focus藍色圈
+
+// .btn:focus,
+// .btn:active {
+//   outline: none;
+//   box-shadow: none;
+// }
+
+// .btn:focus {
+//   box-shadow: none;
+// }

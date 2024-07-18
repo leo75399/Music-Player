@@ -1,0 +1,84 @@
+// color
+.team-primary {
+  color: $team-primary;
+}
+
+.team-secondary {
+  color: $team-secondary;
+}
+
+.team-info {
+  color: $team-info;
+}
+
+.team-success {
+  color: $team-success;
+}
+
+.team-warning {
+  color: $team-warning;
+}
+
+.team-error {
+  color: $team-error;
+}
+
+// team background-color
+.team-bg-primary {
+  background-color: $team-primary;
+}
+
+.team-bg-secondary {
+  background-color: $team-secondary;
+}
+
+.team-bg-info {
+  background-color: $team-info;
+}
+
+.team-bg-success {
+  background-color: $team-success;
+}
+
+.team-bg-warning {
+  background-color: $team-warning;
+}
+
+.team-bg-error {
+  background-color: $team-error;
+}
+
+// NOTE BS default
+// 0 0 0 0.2rem rgb(0 123 255 / 25%)
+
+.team-btn {
+  color: $team-white;
+  background-color: $team-primary;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 20px;
+  width: 268px;
+  //   WARN 之後想想
+  //   width: 100%;
+
+  transition: all 0.2s;
+  &:hover {
+    color: $team-white;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      ),
+      #e47b31;
+  }
+}
+
+.team-error-border {
+  border-color: $team-error;
+}
+
+// 1106 added
+.team-min-height {
+  min-height: calc(100vh - 56px);
+}

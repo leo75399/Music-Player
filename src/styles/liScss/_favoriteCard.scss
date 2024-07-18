@@ -1,0 +1,23 @@
+.li_FCproductCard {
+  a {
+    color: #000;
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  .li_FCproductName {
+    line-height: 1.25rem;
+    font-weight: bold;
+  }
+  .li_FCprice {
+    font-weight: bold;
+  }
+  .li_cardHeart {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    border: transparent;
+    color: $team-primary;
+    font-size: 1rem;
+  }
+}

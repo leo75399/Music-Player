@@ -1,0 +1,370 @@
+// 進去的活動 banner
+.j-one-banner {
+  &__time {
+    font-weight: 500;
+    font-size: 17px;
+    @include respond(team-md) {
+      font-size: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 22px;
+
+    @include respond(team-md) {
+      margin-bottom: 10px;
+      font-size: 35px;
+    }
+  }
+}
+
+// 圓形頭貼 + 使用者名稱
+.j-one-user {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+
+  &__img-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// 電腦版 左手邊的活動內容 (照片 + 活動內容 + 參加者)
+.j-one-meetup-wrap {
+  &__img-box {
+    height: 350px;
+    margin-bottom: 40px; //推到只顯示活動內容
+
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// 活動資訊 框架 + 內容
+.j-one-section {
+  margin-bottom: 50px; //每個section 都會往下推
+
+  &__title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  &__type {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__paragraph {
+    font-size: 20px;
+  }
+
+  // 下面參加者卡片的外框
+  &__attendee-wrap {
+    // 手機板 壓進去 不然靠左有點怪
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include respond(team-sm) {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+
+// 參加者卡片
+.j-one-attendee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 220px;
+
+  background-color: $meetup-lightgreen2;
+
+  max-width: 155px;
+
+  margin-bottom: 30px;
+
+  &__img-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__name {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__position {
+    font-size: 15px;
+    font-weight: 600;
+    color: gray;
+  }
+}
+
+// 推薦活動卡片
+.j-one-recommend {
+  // NOTE 1021 for Link
+  display: block;
+  color: black;
+
+  background-color: $meetup-lightgreen2;
+  padding: 25px;
+  border: 5px solid $meetup-lightgreen2;
+  cursor: pointer;
+  margin-bottom: 20px;
+  @include respond(team-lg) {
+    margin-bottom: 0;
+    height: 100%; // 先留著 以防萬一爆板時 至少同高
+  }
+
+  // NOTE 避免使用者圖片邊框顏色變化不正常 因此只限定border
+  transition: border 0.2s;
+
+  &:hover {
+    background-color: $team-white;
+    border: 5px solid #96bb7c;
+
+    // NOTE 1021 for Link
+    text-decoration: none;
+    color: black;
+
+    // NOTE hover 時 更改userImg的外框
+    & .j-one-count__userImg {
+      border: 3px solid $team-white;
+    }
+  }
+  // padding-top: 25px;
+  // padding-bottom: 25px;
+  // margin-right: 20px;
+
+  &__time {
+    font-weight: 500;
+  }
+  &__title {
+    margin-top: 1px;
+    font-weight: bold;
+    font-size: 23px;
+  }
+  &__location {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    //NOTE 1022 added
+    align-items: baseline;
+
+    i {
+      margin-left: 6px;
+      margin-right: 13px;
+    }
+  }
+
+  &__data {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__count-wrap {
+    display: flex;
+    justify-content: space-between;
+    // FIX
+    margin-top: 20px;
+  }
+}
+
+.j-one-count {
+  display: flex;
+  align-items: center;
+  // NOTE 1023 added 避免某些情況 btn 太靠近 剩餘參加人數
+  margin-right: 6px;
+
+  &__users {
+    display: flex;
+    align-items: center;
+  }
+  &__userImg {
+    box-sizing: content-box; //default
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    //  NOTE j-one-recommend hover 時 更改userImg的外框顏色 (j-one-recommend 控)
+    // 預設為  j-one-recommend 的背景色
+    //  j-one-recommend 被 hover 時 更改為其相同的背景色 避免外框不正長
+    border: 3px solid $meetup-lightgreen2;
+
+    &:not(:last-child) {
+      margin-right: -20px;
+    }
+  }
+
+  &__plus {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+.j-one-btn {
+  color: $team-white;
+  background-color: #025930;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 9px 0px; //壓進去
+  padding: 0 15px;
+
+  // NOTE 1021 fix
+  // width: min-content;
+
+  transition: all 0.2s;
+  &:hover {
+    color: $team-white;
+    background: #96bb7c;
+  }
+
+  &--bottom {
+    background-color: #141719;
+
+    // add
+    font-size: 15px;
+    padding: 10px 25px;
+
+    @include respond(team-md) {
+      font-size: 18px;
+      padding: 10px 35px;
+    }
+
+    &:hover {
+      color: $team-white;
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.3),
+          rgba(255, 255, 255, 0.3)
+        ),
+        #000000;
+    }
+  }
+}
+
+// 電腦版 右手邊的活動資訊 (活動時間 + 地點 + 地圖)
+.j-one-side {
+  padding: 45px 25px 35px;
+  border: 3px solid $team-primary;
+  // top: 60px; //原版
+  top: 116px; // 60+56 nav height
+
+  margin-bottom: 80px;
+  @include respond(team-lg) {
+    margin-bottom: 0px; // 8 4 分時 取消margin 讓side 可以滑到底
+    padding: 35px 20px 25px;
+  }
+
+  // 資料框調整
+  &__info-wrap {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  // 活動時間 + 地點
+  &__data-box {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-weight: 600;
+
+    i {
+      margin-right: 15px;
+    }
+
+    //  手動調整 icon本身偏左的問題
+    i.fix-2 {
+      margin-left: 2px;
+    }
+  }
+
+  // 地圖外框
+  &__map {
+    height: 250px;
+  }
+}
+
+// 緊貼網站 bottom 的 sticky bar
+.j-one-attend {
+  bottom: 0;
+  color: $team-white;
+  background-color: $team-primary;
+
+  padding: 0; //NOTE 取消 bs container 給的padding 不然空間太小
+
+  font-size: 14px;
+  @include respond(team-md) {
+    font-size: 16px;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 15px;
+
+    @include respond(team-sm) {
+      font-size: 16px;
+    }
+
+    @include respond(team-md) {
+      flex-direction: row;
+      font-size: 24px;
+    }
+  }
+}
+
+// NOTE 1021 新增
+
+// 假的 footer 測試用 正式版要和HTML 一起移除
+.fake-footer {
+  color: $team-white;
+  background-color: $team-secondary;
+  height: 200px;
+  font-size: 80px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}

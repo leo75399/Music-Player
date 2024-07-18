@@ -1,0 +1,654 @@
+@import url('http://fonts.cdnfonts.com/css/monument-extended');
+
+
+
+.emma-dot-wrap {
+    width: 100%;
+    // height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+.emma-dot-green {
+    // background: linear-gradient(#EAEDEA, #45A256, #B7C5B3);
+    background: linear-gradient(134.27deg, rgba(234, 237, 234, 0.6) 5.56%, rgba(69, 162, 86, 0.6) 49.74%, rgba(183, 197, 179, 0.6) 93.01%);
+    filter: blur(150px);
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    animation-iteration-count: infinite;
+    animation-name: twinkle-1;
+    animation-duration: 5s;
+}
+.emma-dot-orange {
+    background: linear-gradient(#EAEDEA, #45A256, #B7C5B3);
+    background: linear-gradient(134.27deg, rgba(255, 242, 222, 0.6) 5.56%, rgba(253, 117, 12, 0.6) 49.74%, rgba(255, 208, 40, 0.6) 93.01%);
+    filter: blur(150px);
+    height: 35vw;
+    width: 35vw;
+    border-radius: 50%;
+    animation-iteration-count: infinite;
+    animation-name: twinkle-1;
+    animation-duration: 5s;
+}
+
+@keyframes twinkle-1 {
+    50% {
+      transform: scale(0.9);
+      opacity: 0.5;
+    }
+  }
+
+.emma-dot1 {
+    position: absolute;
+    top: 0vw;
+    margin: -8vw -10vw 0px;
+
+}
+.emma-dot2 {
+    position: absolute;
+    top: 50vw;
+    right: -10vw;
+}
+
+.emma-dot3 {
+    position: absolute;
+    top: 90vw;
+
+}
+.emma-dot4 {
+    position: absolute;
+    top: 110vw;
+    margin: 0px 65vw 0px;
+
+
+}
+.emma-dot5 {
+    position: absolute;
+    top: 155vw;
+    margin: 0px 0vw 0px;
+
+}
+.emma-dot6 {
+    position: absolute;
+    top: 200vw;
+    right: 0;
+
+}
+.emma-dot7 {
+    position: absolute;
+    top: 290vw;
+    left: -10vw;
+
+}
+.emma-dot8 {
+    position: absolute;
+    top: 350vw;
+    right: 0px;
+
+}
+
+.emma-bg-circle-wrap {
+    width: 100%;
+    // height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+
+.emma-bg-circle {
+    height: 200vw;
+    width: 200vw;
+    position: absolute;
+    top: -100vw;
+    left: 0;
+    animation-name: rotate;
+    animation-duration: 200s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
+
+
+.emma-hide {
+    overflow: hidden;
+    position: relative;
+    font-family: 'Roboto', 'Noto Sans', sans-serif;
+}
+.emma-menu {
+    display: none;
+}
+
+.emma-height {
+    height: 800vh;
+}
+
+    
+
+.emma-home-banner-img-wrap {
+    width: 100%;
+    padding-top:20px;
+    padding-bottom: 60px;
+}
+
+.emma-home-banner-img-wrap img{
+    width: 100%;
+}
+
+
+.emma-home-banner-cta-wrap {
+    top:60px;
+}
+
+.emma-home-banner-cta {
+    width: 100%;
+    top: 40px;
+
+}
+
+.emma-home-banner-cta-btn {
+    background-color: #000;
+    width: 50vw;
+    text-align: center;
+    align-items: center;
+    color: #fff;
+
+}
+
+.emma-home-banner-cta-btn a{
+    color: #fff;
+    font-size: 5vw;
+}
+
+.emma-home-banner-cta-words {
+    top: 30px;
+}
+.emma-home-banner-cta-words {
+    h5,p{
+        text-align: center;
+
+    }
+    
+}
+
+.emma-cursor {
+    cursor: url(./home_img/cursor.svg),pointer;
+}
+
+
+
+
+.emma-home-classic-wrap {
+    width: 80%;
+}
+
+.emma-home-classic-img-wrap {
+    width: 80%;
+    padding-top:60px;
+    padding-bottom: 60px;
+
+}
+
+.emma-home-classic-img-wrap img{
+    width: 100%;
+}
+.emma-home-classic2-img-wrap {
+    width: 80%;
+    padding-top:60px;
+    padding-bottom: 60px;
+    margin: auto;
+
+}
+
+.emma-home-classic2-img-wrap img{
+    width: 100%;
+}
+
+
+.emma-home-classic-cta-wrap {
+    top:20vw;
+}
+
+.emma-home-classic-cta {
+    width: 100%;
+    top: 40px;
+
+}
+
+
+.emma-home-classic-cta-btn a{
+    color: #fff;
+    font-size: 1.2vw;
+}
+
+.emma-home-classic-cta-words {
+    top: 10px;
+}
+.emma-home-classic-cta-words {
+    h5,p{
+        text-align: center;
+
+    }
+    
+}
+
+.emma-home-classic2-cta-words {
+    top: 10px;
+}
+.emma-home-classic2-cta-words {
+    h5,p{
+        text-align: center;
+
+    }
+    
+}
+
+.emma-home-classic-cta-btn {
+    background-color: #000;
+    width: 50vw;
+
+    text-align: center;
+    align-items: center;
+    color: #fff;
+
+}
+
+.emma-home-classic-cta-btn a{
+    color: #fff;
+    font-size: 5vw;
+}
+
+.emma-home-classic-cta-title {
+    padding-top: 40px;
+
+    & h3 {
+        font-size: 5.5vw;
+        text-align: center;
+        font-family: 'Monument Extended', sans-serif;
+                                                
+        
+    }
+    
+}
+
+
+
+.emma-home-title {
+
+    & h1{
+        font-size: 40px;
+
+    }
+    
+
+}
+
+
+.emma-home-brand-wrap {
+    background: #E88239;
+    position: relative;
+    margin-top: 20vw;
+}
+
+.emma-brand-circle-wrap {
+    position: absolute;
+    width: 40%;
+    top: -40%;
+    right: -20%;
+    
+}
+
+.emma-brand-circle {
+    width: 100%;
+    animation-name: brandRotate;
+    animation-duration: 200s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+@keyframes brandRotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
+
+.emma-home-brand-title {
+    // width: 100vw;
+    text-align: center;
+    & h2 {
+        font-size: 5vw;
+        color: #fff;
+    }
+}
+
+
+.emma-home-brand-icon-box {
+    width: 15vw;
+    height: 15vw;
+    margin: 3vw 1vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.emma-home-brand-icon-box svg{
+    width: 100%;
+}
+.emma-puma svg{
+    width: 80%;
+}
+.emma-champion svg{
+    width: 80%;
+}
+.emma-ua svg{
+    width: 70%;
+}
+.emma-nb svg{
+    width: 80%;
+}
+
+
+
+
+
+
+
+.emma-home-beatit-title-p p{
+    text-align: left;
+    font-size: 16px;
+    margin-top: 4vw;
+    margin-bottom: 7vw;
+}
+
+.emma-home-beatit-img {
+    width: 50vw;
+}
+
+.emma-home-beatit-img img{
+    width: 100%;
+}
+
+.emma_carousell ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 0px;
+  }
+  .emma_carousell li {
+    width: 32%;
+    padding-bottom: 15px;
+    list-style: none;
+  }
+  .emma_carousell li a {
+    border-radius: 25px;
+    overflow: hidden;
+    display: block;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+
+  .emma_carousell li.readmore_button a {
+    height: 130px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    color: #6d7587;
+    border: #6d7587 2px solid;
+    border-radius: 20px;
+  }
+  .emma_carousell li.readmore_button {
+    font-size: 30px;
+    padding: 0px;
+  }
+  .emma_carousell li.readmore_button p {
+    font-weight: 600;
+  
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+  .emma_carousell li p {
+    line-height: 25px;
+    padding-top: 5px;
+    font-size: 16px;
+  }
+  
+
+
+
+
+
+
+
+@media screen and ( min-width: 992px){
+    .emma-menu {
+        display: block;
+        width: 80px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(235, 232, 224, 0.445);
+
+    }
+
+    .emma-height {
+        height: 700vh;
+    }
+
+    // 以下是menu btn
+    .emma-menu-trigger--open {
+        pointer-events: auto;
+        transition: opacity .5s 
+        cubic-bezier(.55,.085,.68,.53) .3s,color .5s 
+        cubic-bezier(.165,.84,.44,1);
+        user-select: none;
+    }
+    .emma-menu-trigger {
+        position: relative;
+        padding: 1.25rem .625rem;
+        margin: 2.5rem 0 0;
+        transform: rotate(-90deg);
+    }
+
+    .emma-txt--topbar {
+        font: normal 400 .875rem/1.71 "domaine-display",serif;
+        letter-spacing: .01em;
+    }
+
+    .emma-menu-trigger__inner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .emma-menu-trigger__icon {
+        position: relative;
+        overflow: hidden;
+        width: 2.375rem;
+        height: .875rem;
+    }
+
+    .emma-menu-trigger__icon, .emma-menu-trigger__txt {
+        display: block;
+        pointer-events: none;
+        transition: transform .5s cubic-bezier(.165,.84,.44,1);
+    }
+
+    .emma-menu-trigger--open svg {
+        transition: fill .5s cubic-bezier(.165,.84,.44,1);
+    }
+
+    .emma-menu-trigger svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: #0d1016;
+    }
+
+    // menu btn到這裡
+
+    .emma-banner-wrap {
+        margin-bottom: 10vw;
+        width: 84%;
+    }
+
+    .emma-home-banner-img-wrap {
+        padding-top:80px;
+        padding-bottom: 100px;
+    }
+
+
+    .emma-home-banner-cta-btn {
+        width: 20vw;
+        height: 5vw;
+    }
+    .emma-home-banner-cta-btn a{
+        font-size: 3.5vw;
+    }
+
+    .emma-home-banner-cta-words {
+        h5,p {
+            text-align: right;
+
+        }
+        
+    }
+    .emma-home-banner-cta-words h5 {
+        font-size: 4vw;
+    }
+    .emma-home-banner-cta-words p {
+        font-size: 1.5vw;
+    }
+    .emma-home-classic-wrap {
+        width: 100%;
+    }
+
+    .emma-home-classic-img-wrap {
+        padding:0px;
+        padding-bottom: 100px;
+        width: 100%;
+    }
+    .emma-home-classic2-img-wrap {
+        padding-bottom: 100px;
+        padding-right: 0px;
+        width: 100%;
+    }
+    
+    .emma-home-classic2-img-wrap img{
+        width: 100%;
+    }
+
+
+    .emma-home-classic-cta-btn {
+        width: 20vw;
+        height: 5vw;
+    }
+    .emma-home-classic-cta-btn a{
+        font-size: 3.5vw;
+        align-items: center;
+    }
+
+    .emma-home-classic-cta-words {
+        & h5,p{
+            text-align: left;
+        }
+    }
+    .emma-home-classic-cta-words h5 {
+        font-size: 4vw;
+    }
+    .emma-home-classic-cta-words p {
+        font-size: 1.5vw;
+    }
+
+    .emma-home-classic-cta-title {
+        
+        & h3 {
+
+            text-align: left;
+        }
+        
+    }
+
+    .emma-home-classic2-wrap {
+        flex-direction: row-reverse;
+    }
+
+    .emma-home-classic2-cta-words {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        margin-left: 140px;
+    }
+
+    
+
+    .emma-home-title {
+        margin-left: 10vw;
+    }
+
+
+    .emma-home-title h1{
+        font-size: 6vw;
+    }
+
+
+    
+    
+    
+    .emma-home-brand-title {
+        margin-bottom: 5vw;
+        margin-top: 3vw;
+    }
+    
+    
+    .emma-home-brand-icon-box {
+        width: 15vw;
+        height: 15vw;
+        margin: 5vw 1vw 5vw;
+    }
+
+    .emma-home-beatit-wrap {
+        width: 100vw;
+    }
+
+    .emma-home-beatit-img-wrap {
+        margin: 0px 10vw 0px;
+    }
+
+    .emma-brand-circle-wrap {
+        position: absolute;
+        width: 25%;
+        top: -35%;
+        right: -15%;
+    }
+
+   
+
+    .emma-home-meetup-m10 {
+        margin: 0px 10vw 0px;
+        z-index: 1;
+    }
+
+    .emma-home-meetup-items {
+        position: relative;
+        z-index: 2;
+    }
+
+    
+
+
+    .emma-home-beatit-title-p p{
+        font-size: 1.8vw;
+    }
+
+}

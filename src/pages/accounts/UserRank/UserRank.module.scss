@@ -1,0 +1,65 @@
+.rank_section {
+  width: 600px;
+  margin-bottom: 100px;
+  @media (max-width: 992px){
+    width: 330px;
+  }
+  & .rank_section_top {
+    border-bottom: 1px solid #c4c4c4;
+    // border-top: 100px;
+    font-size: 1.5rem;
+    @media (max-width: 992px){
+      margin-top:30px;
+    }
+    
+  }
+  & .money{
+    font-size: 1.5rem;
+  }
+  & .rank_level {
+    width: 43px;
+    font-size: 14px;
+    & .rank_level_inner {
+      width: 43px;
+      height: 43px;
+      border: 1px solid rgb(2, 89, 48);
+      border-radius: 50%;
+      line-height: 43px;
+      text-align: center;
+      // background-color: rgb(2, 89, 48);
+      
+    }
+    .active {
+      background-color: rgb(2, 89, 48);
+      color: white;
+    }
+    
+    & .line {
+      width: 1px;
+      height: 60px;
+      background-color: rgb(2, 89, 48);
+    }
+  }
+  & .rank_text {
+    width: 140px;
+    font-size: 14px;
+    & .rank_text_inner {
+      height: 43px;
+      border: 1px solid white;
+      border-radius: 50%;
+      line-height: 43px;
+      text-align: center;
+    }
+  }
+  & .rank_condition {
+    font-size: 14px;
+    & .rank_condition_inner {
+      height: 43px;
+      border: 1px solid white;
+      border-radius: 50%;
+      line-height: 43px;
+      text-align: left;
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+.profile_top {
+  width: 600px;
+  border-bottom: 1px solid #c4c4c4;
+  @media (max-width: 992px) {
+    width: 330px;
+  }
+  & .titleText{
+    font-size: 1.5rem;
+    @media (max-width: 992px){
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+  }
+}
+.profile_top .modify_button {
+  width: 100px;
+  border-radius: 100px;
+}
+.input_size {
+  height: 40px;
+}
+.phone_modify_button {
+  border-top: 1px solid #c4c4c4;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 15px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}

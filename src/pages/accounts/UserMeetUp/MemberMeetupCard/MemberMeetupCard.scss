@@ -1,0 +1,58 @@
+// card
+.j-member-meetup {
+  display: block;
+  color: black;
+  cursor: pointer;
+  // margin-bottom: 80px;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__img-box {
+    overflow: hidden;
+    height: 200px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      // height: 100%;
+      height: 200px;
+    }
+  }
+
+  &__info-box {
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  &__time {
+    font-weight: 500;
+    font-size: 16px;
+    // margin-top: 8px;
+    // margin-bottom: 8px;
+  }
+
+  &__location {
+    display: flex;
+    align-items: baseline;
+
+    i {
+      color: #b0b8bc;
+      margin-right: 13px;
+    }
+  }
+
+  &__data {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}
+

@@ -1,0 +1,96 @@
+.j-create-form {
+  &__title {
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px dotted $team-primary;
+
+    // 1105 added
+    margin-top: 100px;
+  }
+
+  &__label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__btn {
+    color: $team-secondary;
+    border-radius: 100px;
+
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    width: 45%;
+
+    border: 3px solid $team-secondary;
+
+    @include respond(team-lg) {
+      width: 30%;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    // focus時 顏色變深
+    &:focus {
+      border: 3px solid $team-secondary;
+      background-color: $meetup-lightgreen;
+
+      // 1105 added
+      box-shadow: none; // 光消失
+    }
+
+    // &--dark {
+    //   border: 3px solid $team-secondary;
+    //   background-color: #f2faed;
+    // }
+
+    // &--light {
+    //   border: 3px solid $team-secondary;
+    // }
+  }
+
+  &__fake-btn {
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(-0.25rem);
+      box-shadow: 0 0.5rem 0.5rem -0.4rem $team-primary;
+    }
+  }
+
+  &__img-box {
+    margin-top: 20px;
+    background-color: #eeeeee;
+    // 改成固定高效果好像比較好?
+    height: 450px;
+    cursor: pointer;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    & i {
+      font-size: 80px;
+    }
+  }
+
+  &__map {
+    height: 60vh;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    background-color: $team-primary;
+  }
+}
+
+// 1109 added
+.j-create-margin {
+  margin-bottom: 60px;
+  @include respond(team-lg) {
+    margin-bottom: 150px;
+  }
+}

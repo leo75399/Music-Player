@@ -1,0 +1,138 @@
+.wrap711Ming {
+  width: 1000px;
+  background-color: #f8f8f8;
+  margin: 0 auto;
+}
+.bannerMing {
+  background-color: #eeeeee;
+  padding: 10px;
+  height: 65px;
+}
+.bannerMing img {
+  width: 100%;
+  height: 100%;
+}
+.bannerBottomMing {
+  background-color: #02a64f;
+  height: 10px;
+  width: 1000px;
+  margin: 0;
+}
+.logo711Ming {
+  margin-top: 5px;
+  width: 155px;
+  height: 40px;
+  border-right: 1px solid #02a64f;
+  padding-right: 10px;
+}
+.searchMapMing {
+  color: #02a64f;
+  margin: 0;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.eMapMing {
+  color: #828282;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.mapBodyMing {
+  padding: 0 20px;
+  height: 600px;
+}
+.mapInnerMing {
+  background-color: #fff;
+  padding: 10px 10px 30px 10px;
+}
+.mapTitleMing {
+  color: #ff6600;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.sel_left_Ming {
+  height: 280px;
+  width: 265px;
+  padding-right: 45px;
+}
+.street_options_Ming:hover {
+  border-color: red;
+}
+.sel_left_title_Ming {
+  color: #ff6600;
+  font-weight: bold;
+  font-size: 14px;
+}
+.buttonTitleMing {
+  font-weight: bold;
+}
+.sel_right_title_Ming {
+  font-weight: bold;
+}
+.store_list_Ming {
+  width: 675px;
+  height: 250px;
+  background-color: #f1f1f1;
+  overflow: auto;
+  border-radius: 4px;
+}
+.list_box_Ming {
+  border: 1px solid transparent;
+  background-color: #fff;
+  width: 300px;
+  list-style: none;
+  margin: 7.5px;
+  border-radius: 4px;
+  height: 65px;
+  box-shadow: 0 2px 1px rgb(0 0 0 / 10%);
+  padding: 10px 10px 2px;
+  cursor: pointer;
+}
+.list_box_Ming:hover {
+  border: 1px solid #d4d4d4;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    #e47b31;
+  .store_address_Ming {
+    color: #02a64f;
+  }
+}
+.store_address_Ming {
+  color: #aaa;
+  font-size: 14px;
+  height: 2.4 em;
+  line-height: 1.2em;
+}
+.swal2-actions .swal2-confirm {
+  font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+  background-color: #fff !important;
+  color: #000;
+  border: 1px solid #000;
+}
+.swal2-actions .swal2-confirm:hover {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    rgba(228, 228, 228, 0.5) !important;
+}
+.swal2-actions .swal2-cancel {
+  font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+  border: 1px solid #e47b31;
+}
+.swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    #e47b31;
+}
+.swal2-styled.swal2-default-outline:focus {
+  box-shadow: none;
+}

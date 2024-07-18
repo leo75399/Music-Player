@@ -1,0 +1,100 @@
+.leo_into_space {
+  position: absolute;
+  z-index: 99;
+  animation: dissapear 1s 3s 1 linear forwards;
+}
+@keyframes dissapear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.leo_into_space::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+$duration: 4;
+
+.leo_into_space .scene {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  perspective: 15px;
+  perspective-origin: 50% 50%;
+}
+.leo_into_space .wrap {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  top: -500px;
+  transform-style: preserve-3d;
+  animation: move #{$duration}s infinite cubic-bezier(1, 0.14, 0.97, 0.96);
+  animation-fill-mode: forwards;
+}
+.leo_into_space .wrap:nth-child(2) {
+  animation: move #{$duration}s infinite cubic-bezier(1, 0.14, 0.97, 0.96);
+  animation-delay: 0s;
+}
+.leo_into_space .wall {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/18515/PIA09959-1280x800_copy.jpg);
+  background-size: cover;
+  opacity: 0;
+  animation: fade #{$duration}s infinite linear;
+}
+.leo_into_space .wrap:nth-child(2) .wall {
+  animation-delay: #{$duration / 2}s;
+}
+.leo_into_space .wall-right {
+  transform: rotateY(90deg) translateZ(500px);
+}
+.leo_into_space .wall-left {
+  transform: rotateY(-90deg) translateZ(500px);
+}
+.leo_into_space .wall-top {
+  transform: rotateX(90deg) translateZ(500px);
+}
+.leo_into_space .wall-bottom {
+  transform: rotateX(-90deg) translateZ(500px);
+}
+.leo_into_space .wall-back {
+  transform: rotateX(180deg) translateZ(500px);
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes move {
+  0% {
+    transform: translateZ(-500px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateZ(500px) rotate(0deg);
+  }
+}

@@ -1,0 +1,344 @@
+.j-list-search {
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  &__input {
+    font-weight: 600;
+    font-family: 'Font Awesome 6 Free';
+
+    border: 3px solid black;
+    padding: 20px;
+    font-size: 18px;
+
+    margin: 0 auto 15px;
+
+    &::placeholder {
+      color: #b0b8bc;
+    }
+  }
+}
+
+//  1105 added
+.j-list-map {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #d3d3d3;
+
+  @include respond(team-lg) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    justify-content: flex-end;
+  }
+
+  & button {
+    min-width: max-content;
+  }
+}
+
+// card
+.j-list-card {
+  display: block;
+  color: black;
+  cursor: pointer;
+  margin-bottom: 80px;
+  position: relative;
+  //   NOTE
+  background-color: rgba(255, 255, 255, 0.4);
+
+  border-radius: 5px;
+  overflow: hidden;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  transition: all 0.2s;
+
+  backdrop-filter: blur(3px);
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    & img {
+      filter: contrast(120%);
+    }
+  }
+
+  &__img-box {
+    overflow: hidden;
+    height: 300px;
+    padding: 20px;
+
+    img {
+      transition: all 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+      filter: contrast(80%);
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info-box {
+    margin-left: 30px;
+    padding-bottom: 20px;
+
+    position: relative;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  &__time {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  &__location {
+    display: flex;
+
+    //NOTE 1022 added
+    align-items: baseline;
+
+    i {
+      color: #b0b8bc;
+      margin-right: 13px;
+    }
+  }
+
+  &__data {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: -47px;
+    right: 17px;
+    font-size: 160px;
+    opacity: 0.04;
+  }
+}
+
+//////////////////////////
+.j-list-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 56px);
+  overflow: hidden;
+  position: relative;
+
+  &__circle {
+    $particleSize: 30vmin;
+    $animationDuration: 25s;
+    $amount: 10;
+
+    z-index: -2;
+    width: $particleSize;
+    height: $particleSize;
+    border-radius: $particleSize;
+    position: absolute;
+    animation: $animationDuration linear infinite circleMove;
+    // animation-delay: 1s;
+
+    @for $i from 1 through $amount {
+      &:nth-child(#{$i}) {
+        color: ghostwhite;
+
+        // 隨機起始位置
+        top: random(100) * 1%;
+        left: random(100) * 1%;
+
+        backdrop-filter: blur(1px);
+
+        // 亂數開始時間
+        animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+
+        // 亂數延遲
+        animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+
+        //距離旋轉中心點 一定範圍內 隨機距離 並且決定左旋獲右旋
+        transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+
+        // box-shadow: 20px 0 50px currentColor;
+
+        $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+        $x: if(random() > 0.5, -1, 1);
+        box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+      }
+    }
+  }
+}
+
+@keyframes circleMove {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+// background - text
+.j-list-bg-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: -5;
+}
+
+.j-list-bg {
+  position: relative;
+
+  color: rgb(252, 252, 252);
+
+  // color: $team-primary;
+
+  font-weight: 700;
+  font-size: 200px;
+  letter-spacing: 6px;
+  text-align: center;
+  transform: rotate(-20deg) skew(25deg);
+  margin: 60px;
+  z-index: -1;
+}
+
+.j-list-bg:before {
+  content: attr(data-j-text);
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: none;
+  filter: blur(8px);
+  z-index: -2;
+}
+////////////////////////////
+//check more
+
+////////////////////////
+//Scroll To Top
+.j-list-scroll-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 15%;
+  right: 7%;
+
+  z-index: 2;
+}
+
+.j-list-scroll-box {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg);
+
+  &:hover {
+    animation: j-rolling 20s linear infinite;
+    animation-delay: 0.5s;
+
+    /* 360/16=22.5 */
+    span {
+      transform: translate(-50%, -50%) rotateX(calc(var(--i) * 20deg))
+        translateZ(106px);
+
+      background: linear-gradient(90deg, transparent, #e88239, transparent);
+    }
+  }
+
+  & span {
+    user-select: none;
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 4px 10px;
+    line-height: 75%;
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+
+    // background: linear-gradient(
+    //   90deg,
+    //   transparent,
+    //   rgba(0, 0, 0, 0.5),
+    //   transparent
+    // );
+    background: linear-gradient(90deg, transparent, #e88239, transparent);
+
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.25);
+    // text-stroke: 1px rgba(0, 0, 0, 0.25);
+
+    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 0deg))
+      translateZ(106px);
+
+    & i:first-child {
+      // color: $team-primary;
+      color: white;
+    }
+
+    & i:last-child {
+      // color: #96bb7c;
+      color: white;
+    }
+  }
+}
+
+@keyframes j-rolling {
+  0% {
+    transform: perspective(1000px) rotateX(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(360deg);
+  }
+}
+
+//////////////////////
+
+.j-loader {
+  position: relative;
+  font-size: 35px;
+  @include respond(team-md) {
+    font-size: 45px;
+  }
+
+  color: transparent;
+  // -webkit-text-stroke: 2px #8a4f24;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+
+  font-family: 'Kanit', sans-serif;
+
+  &::before {
+    content: attr(data-meetup-loader);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #e88239;
+    border-right: 3px solid #e88239;
+    overflow: hidden;
+    animation: j-loader 1s ease infinite;
+  }
+}
+
+@keyframes j-loader {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

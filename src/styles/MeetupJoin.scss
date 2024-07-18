@@ -1,0 +1,238 @@
+.j-join-select {
+  &__drop {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    margin-right: 9px;
+    &:first-child {
+      margin-left: 9px;
+    }
+
+    @include respond(team-lg) {
+      margin-top: 15px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.j-join-bar {
+  position: absolute;
+  bottom: 0;
+  // 設高一點 不然蓋不住leaflet
+  z-index: 999;
+  height: 30vh;
+
+  // test
+  &--mobile {
+    // -28vh 等於  j-join-bar:30vh
+    // 減掉 .j-join-bar__toggle:2vh
+    bottom: -28vh;
+  }
+
+  //  FIX
+  background-color: $team-white;
+  @include respond(team-lg) {
+    position: initial;
+    // NOTE FIX 56px 是 nav 高度
+    height: calc(100vh - 56px);
+
+    // WARN 1013 固定寬
+    max-width: 450px;
+    // min-width: 450px;
+  }
+
+  &__toggle {
+    // background-color: red;
+    // height: 16px;
+    height: 2vh;
+
+    & div {
+      background-color: black;
+      width: 50px;
+      height: 3px;
+      border-radius: 20px;
+    }
+  }
+}
+
+// NOTE　ｍａｐ
+.j-join-map {
+  overflow: hidden;
+  // FIX
+  // background-color: $team-warning;
+  // NOTE FIX 56px 是 nav ; 高度 48px是 手機板dropdown
+  height: calc(100vh - 48px - 56px);
+  @include respond(team-lg) {
+    // NOTE FIX 56px 是 nav 高度
+    height: calc(100vh - 56px);
+  }
+}
+
+.j-join-bar__info-wrap {
+  overflow: auto;
+  padding: 10px;
+  // border: 3px solid $team-primary;
+
+  // 1105 added
+  border: 3px solid transparent;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  height: 90%;
+
+  //   new
+  display: flex;
+
+  @include respond(team-lg) {
+    // NOTE FIX 56px 是 nav 高度
+    // 父層是calc(100vh - 56px); 因此除了56外 還要減掉 dropdown
+    height: calc(100vh - 140px);
+
+    padding: 15px;
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+.box {
+  //   new
+  width: 300px;
+  height: 100%;
+  flex-shrink: 0;
+  margin-right: 10px;
+
+  @include respond(team-lg) {
+    flex-shrink: initial;
+    margin-right: 0px;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 200px;
+  }
+}
+
+.j-join-meetup {
+  //   new
+  width: 300px;
+  height: 100%;
+  flex-shrink: 0;
+  margin-right: 10px;
+  // test
+  display: flex;
+  flex-direction: column;
+
+  color: black;
+
+  // cancel a tag default
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  // border: 1px solid black;
+  // box-shadow: 0px 8px 20px -7px rgba(0, 0, 0, 0.51);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  @include respond(team-lg) {
+    flex-shrink: initial;
+    margin-right: 0px;
+    width: 100%;
+    margin-bottom: 16px;
+    height: 200px;
+  }
+
+  &__img-box {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    // FIX
+    // max-height: 100px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    padding: 10px 25px 10px;
+
+    &--title {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  &__distance {
+    font-weight: bold;
+  }
+}
+
+// NOTE WARN scrollbar
+/* width */
+// ::-webkit-scrollbar {
+//   width: 3px;
+// }
+
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 10px;
+// }
+
+/* Track */
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f1;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: $team-primary;
+// }
+
+// for meetup content popup
+.meetup-popup .leaflet-popup-content-wrapper {
+  background: white;
+  color: black;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0px; //default 1px
+  // width: 100%;
+  overflow: hidden; // 擋住預設 border-radius後多出的部分
+
+  & a {
+    color: black;
+    width: 310px;
+    margin-bottom: 0; // 把原本的 j-join-meetup的margin bottom取消
+    // height: max-content;
+    img {
+      max-height: 100px;
+    }
+  }
+
+  & .leaflet-popup-content {
+    margin: 0;
+  }
+}
+// .meetup-popup .leaflet-popup-content-wrapper a {
+//   // color: rgba(255, 255, 255, 0.5);
+//   color: black;
+// }
+
+// .meetup-popup .leaflet-popup-tip-container {
+//   width: 30px;
+//   height: 15px;
+// }
+// .meetup-popup .leaflet-popup-tip {
+//   border-left: 15px solid transparent;
+//   border-right: 15px solid transparent;
+//   border-top: 15px solid #2c3e50;
+// }

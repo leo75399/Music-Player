@@ -1,0 +1,51 @@
+.meetUp_section {
+  width: 650px;
+  // border-bottom: 1px solid #c4c4c4;
+  margin-bottom: 90px;
+
+  @media (max-width: 992px) {
+    width: 330px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  & .meetUp_section_bg {
+    width: 650px;
+    border-bottom: 1px solid #c4c4c4;
+    @media (max-width: 992px) {
+      width: 330px;
+      display: flex;
+      // align-items: center;
+      // line-height: 60px;
+    }
+  }
+  & .meetUp_section_top {
+    font-size: 1.5rem;
+    // line-height: 60px;
+  }
+  & .cusor {
+    cursor: pointer;
+  }
+  & .cardSection {
+    height: 662px;
+    @media (max-width: 992px) {
+      height: 100%;
+    }
+  }
+  & .pageNumber {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 992px) {
+      justify-content: center;
+      margin: 50px 0px;
+    }
+  }
+  & .pageActive {
+    background-color: #e88239;
+    color: #fff;
+    // cursor: pointer;
+  }
+  & .JoinLink {
+    color: #ffff;
+  }
+}

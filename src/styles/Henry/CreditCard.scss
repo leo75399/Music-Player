@@ -1,0 +1,359 @@
+.nameMing,
+.nameBackMing {
+  font-family: 'cwTeXYen';
+  font-size: 24px;
+}
+
+/*--------------------
+Form
+--------------------*/
+.form-Ming fieldset {
+  border: none;
+  padding: 0;
+  padding: 10px 0;
+  position: relative;
+  clear: both;
+}
+.form-Ming fieldset.fieldset-expiration-Ming {
+  float: left;
+  width: 60%;
+}
+.form-Ming fieldset.fieldset-expiration-Ming .select-Ming {
+  width: 75px;
+  margin-right: 12px;
+  float: left;
+}
+.form-Ming fieldset.fieldset-ccv-Ming {
+  clear: none;
+  float: right;
+  width: 86px;
+}
+.form-Ming fieldset label {
+  display: block;
+  /* text-transform: uppercase; */
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: Inconsolata;
+}
+.form-Ming fieldset input,
+.form-Ming fieldset .select-Ming {
+  width: 100%;
+  height: 38px;
+  color: #333333;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.form-Ming fieldset input.input-cart-number-Ming,
+.form-Ming fieldset .select-Ming.input-cart-number-Ming {
+  width: 68px;
+  display: inline-block;
+  margin-right: 8px;
+  text-align: center;
+}
+.form-Ming fieldset input.input-cart-number-Ming:last-child,
+.form-Ming fieldset .select-Ming.input-cart-number-Ming:last-child {
+  margin-right: 0;
+}
+
+.form-Ming fieldset .select-Ming {
+  position: relative;
+}
+.form-Ming fieldset .select-Ming::after {
+  content: '';
+  border-top: 8px solid #222;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  right: 10px;
+  pointer-events: none;
+}
+.form-Ming fieldset .select-Ming select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* position: absolute; */
+  padding: 0;
+  border: none;
+  width: 100%;
+  outline: none !important;
+  /* top: 6px; */
+  /* left: 6px; */
+  background: none;
+}
+.form-Ming fieldset .select-Ming select :-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+.form-Ming button {
+  width: 100%;
+  outline: none !important;
+  background: linear-gradient(180deg, #49a09b, #3d8291);
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 90px;
+}
+// .form-Ming button .fa {
+//   margin-right: 6px;
+// }
+
+/*--------------------
+Checkout
+--------------------*/
+.checkoutMing {
+  margin: 150px auto 30px;
+  position: relative;
+  max-width: 460px;
+  background: white;
+  border-radius: 15px;
+  padding: 160px 15px 130px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray5);
+}
+
+/*--------------------
+Credit Card
+--------------------*/
+.credit-card-box-Ming {
+  perspective: 1000;
+  width: 365px;
+  position: absolute;
+  top: -112px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.credit-card-box-Ming:hover .flip-Ming,
+.credit-card-box-Ming.hover .flip-Ming {
+  transform: rotateY(180deg);
+}
+.credit-card-box-Ming .front-Ming,
+.credit-card-box-Ming .backMing {
+  width: 345px;
+  height: 230px;
+  border-radius: 15px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: linear-gradient(135deg, #bd6772, #53223f);
+  position: absolute;
+  color: #fff;
+  font-family: Inconsolata;
+  top: 0;
+  left: 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+.credit-card-box-Ming .front-Ming::before,
+.credit-card-box-Ming .backMing::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* background: url("http://cdn.flaticon.com/svg/44/44386.svg") no-repeat center; */
+  background-size: cover;
+  opacity: 0.05;
+}
+.credit-card-box-Ming .flip-Ming {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.credit-card-box-Ming .logo-Ming {
+  position: absolute;
+  top: 9px;
+  right: 20px;
+  width: 60px;
+}
+.credit-card-box-Ming .logo-Ming svg {
+  width: 100%;
+  height: auto;
+  fill: #fff;
+}
+.credit-card-box-Ming .front-Ming {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.credit-card-box-Ming .backMing {
+  transform: rotateY(180deg);
+}
+.credit-card-box-Ming .backMing .logo-Ming {
+  top: 185px;
+}
+.chipMing {
+  position: relative;
+  top: 30px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 40px;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+  overflow: hidden;
+}
+.chipMing .chip-line-Ming {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+.chipMing .chip-line-Ming:nth-child(1) {
+  top: 13px;
+}
+.chipMing .chip-line-Ming:nth-child(2) {
+  top: 20px;
+}
+.chipMing .chip-line-Ming:nth-child(3) {
+  top: 28px;
+}
+.chipMing .chip-line-Ming:nth-child(4) {
+  left: 25px;
+  width: 1px;
+  height: 50px;
+}
+.chipMing .chip-main-Ming {
+  width: 20px;
+  height: 25px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  background-image: linear-gradient(to bottom left, #efdbab, #e1cb94);
+  z-index: 1;
+}
+.waveMing {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+}
+/* .credit-card-box-Ming .chipMing {
+  position: absolute;
+  width: 60px;
+  height: 45px;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #ddccf0 0%, #d1e9f5 44%, #f8ece7 100%);
+  border-radius: 8px;
+}
+.credit-card-box-Ming .chipMing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 4px solid rgba(128, 128, 128, 0.1);
+  width: 80%;
+  height: 70%;
+  border-radius: 5px;
+} */
+.credit-card-box-Ming .stripMing {
+  background: linear-gradient(135deg, #404040, #1a1a1a);
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 30px;
+  left: 0;
+}
+.credit-card-box-Ming .numberMing {
+  position: absolute;
+  margin: 0 auto;
+  top: 90px;
+  left: 19px;
+  font-size: 24px;
+}
+.credit-card-box-Ming label {
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-shadow: none;
+  /* text-transform: uppercase; */
+  font-weight: normal;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 3px;
+}
+.credit-card-box-Ming .card-holder-Ming,
+.credit-card-box-Ming .card-expiration-date-Ming {
+  position: absolute;
+  margin: 0 auto;
+  top: 150px;
+  left: 19px;
+  text-transform: capitalize;
+}
+
+.credit-card-box-Ming .card-expiration-date-Ming {
+  text-align: right;
+  left: auto;
+  right: 20px;
+}
+.credit-card-box-Ming .ccvMing {
+  position: relative;
+  height: 36px;
+  background: #fff;
+  width: 91%;
+  border-radius: 5px;
+  top: 110px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: 0 auto;
+  color: #000;
+  text-align: right;
+  padding: 10px;
+}
+.nameBackMing {
+  position: absolute;
+  height: 36px;
+  top: 0;
+  /* width: 91%; */
+  text-align-last: left;
+  line-height: 36px;
+}
+.credit-card-box-Ming .ccvMing label {
+  margin: -30px 0 14px;
+  color: #fff;
+}
+
+.expiresDateMing {
+  font-size: 22px;
+}
+.btnCancelMing {
+  background-color: #fff;
+  color: #000;
+  border:1px solid #000;
+}
+.btnCancelMing:hover {
+  color:#000;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    rgba(228, 228, 228, 0.5);
+  border-color:#000;
+}
+.btnConfirmMing {
+  background-color: var(--orange);
+  color: #fff;
+}
+.btnConfirmMing:hover {
+  color: #fff;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    #e47b31;
+  border-color:#e47b31
+}

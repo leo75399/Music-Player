@@ -1,0 +1,33 @@
+.order_top {
+  width: 650px;
+  border-bottom: 1px solid #c4c4c4;
+  font-size: 1.5rem;
+  @media (max-width: 992px) {
+    width: 330px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+}
+.order_top_inner {
+  width: 650px;
+  @media (max-width: 992px) {
+    width: 330px;
+  }
+}
+.data_section {
+  margin: 50px 0px;
+  .data {
+    margin: 50px 0px;
+  }
+}
+.noOrder {
+  width: 650px;
+  background-color: #f3ae7d;
+  height: 50px;
+  border-radius: 5px;
+  line-height: 50px;
+  border: 1px solid #e88239;
+  @media (max-width: 992px) {
+    width: 330px;
+  }
+}

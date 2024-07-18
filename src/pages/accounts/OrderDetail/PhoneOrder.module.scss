@@ -1,0 +1,23 @@
+.order{
+  background-color: rgba(196,196,196,0.2);
+}
+.order_id {
+  height: 60px;
+  border-bottom: 1px solid #c4c4c4d5;
+  line-height:60px
+}
+.orderCollapse {
+  max-height: 0px;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.show {
+  max-height: 240px;
+  transition: all 0.5s;
+  opacity: 1;
+}
+.border_button{
+  height: 40px;
+}

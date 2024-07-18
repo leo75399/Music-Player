@@ -1,0 +1,48 @@
+.li_like {
+  margin-top: 80px;
+  .li_productCard {
+    .li_name {
+      font-size: 1.25rem;
+    }
+  }
+  .li_icon {
+    position: absolute;
+    top: 50%;
+  }
+  .slick-dots {
+    bottom: -10px;
+  }
+  .li_linkToCustomized {
+    transition: 0.5s;
+    &:hover {
+      color: $team-primary;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .li_like {
+    margin-top: 120px;
+    .li_iconLeft {
+      left: 10px;
+    }
+    .li_iconRight {
+      right: 10px;
+    }
+    .slick-dots {
+      bottom: -80px;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}

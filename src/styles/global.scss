@@ -1,0 +1,53 @@
+// 變數覆蓋需要在導入Bootstrap的Sass檔案之前
+// 參考Bootstrap的 _variables.scss
+$primary: #e88239;
+$secondary: rgba(10, 10, 10, 0.842);
+$danger: rgba(148, 233, 212);
+
+// 導入bootstrap所有的樣式與預設變數
+@import '~bootstrap/scss/bootstrap.scss';
+
+// font Noto Sans TC
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+// font Roboto
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+// font cwTeXYen
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexyen.css');
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+// 小組基礎設定
+@import 'base.scss';
+
+// 小組部件共通部分
+@import 'team.scss';
+
+// joey
+@import 'MeetupCreate.scss';
+// NOTE 1013 add
+@import 'MeetupJoin.scss';
+// NOTE 1018 add
+@import 'MeetupOne.scss';
+// NOTE 1023 add
+@import 'MeetupModal.scss';
+// NOTE 1026 add
+@import 'MeetupMain.scss';
+// NOTE 1028 add
+@import 'MeetupList.scss';
+
+// li
+@import './liScss/products.scss';
+
+
+//emma
+@import './emmaScss/emmaAll.scss'
+
+// html {
+//   font-size: 16px;
+// }
+
+// body {
+//   margin: 0;
+//   padding: 0;
+//   font-family: sans-serif;
+// }

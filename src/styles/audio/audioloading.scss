@@ -1,0 +1,82 @@
+@keyframes quiet {
+  25% {
+    transform: scaleY(0.6);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(0.8);
+  }
+}
+
+@keyframes normal {
+  25% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(0.6);
+  }
+}
+@keyframes loud {
+  25% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(1.2);
+  }
+}
+.leo_audiopage_loading {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  height: calc(100vh - 56px);
+}
+
+.leo_audiopage_loading .boxContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 63px;
+  --boxSize: 7px;
+  --gutter: 4px;
+  width: calc((var(--boxSize) + var(--gutter)) * 5);
+}
+
+.leo_audiopage_loading .box {
+  transform: scaleY(0.4);
+  height: 100%;
+  width: var(--boxSize);
+  background: #e88239;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  border-radius: 8px;
+}
+
+.leo_audiopage_loading .box1 {
+  animation-name: quiet;
+}
+
+.leo_audiopage_loading .box2 {
+  animation-name: normal;
+}
+
+.leo_audiopage_loading .box3 {
+  animation-name: quiet;
+}
+
+.leo_audiopage_loading .box4 {
+  animation-name: loud;
+}
+
+.leo_audiopage_loading .box5 {
+  animation-name: quiet;
+}

@@ -1,0 +1,10 @@
+.li_search {
+  .li_inputSearch {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    &:focus {
+      outline: 0px solid transparent;
+    }
+  }
+}

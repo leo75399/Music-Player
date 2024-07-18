@@ -1,0 +1,62 @@
+.under_bg {
+  margin-bottom: 100px;
+  & .order_top {
+    width: 700px;
+    border-bottom: 1px solid #c4c4c4;
+    font-size: 1.5rem;
+  }
+  & .tblHeader {
+    font-size: 20px;
+  }
+  & .data_section {
+    margin: 50px 0px;
+    height: 440px;
+    & .data {
+      margin: 50px 0px;
+    }
+  }
+  & .pageActive {
+    background-color: #e88239;
+    color: #fff;
+    // cursor: pointer;
+  }
+  & .cusor {
+    cursor: pointer;
+  }
+}
+.PhoneOrderSection {
+  width: 330px;
+  // transition:.5s;
+  & .phoneOrder_top {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  & .page {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    & .pageActive {
+      background-color: #e88239;
+      color: #fff;
+      // cursor: pointer;
+    }
+  }
+}
+.order_top_spinning {
+  width: 700px;
+  border-bottom: 1px solid #c4c4c4;
+  @media (max-width: 992px) {
+    width: 330px;
+  }
+}
+.under_bg .orderBtn {
+  border-radius: 0px;
+}
+.noOrder {
+  background-color: #f3ae7d;
+  height: 50px;
+  border-radius: 5px;
+  line-height: 50px;
+  border: 1px solid #e88239;
+}
