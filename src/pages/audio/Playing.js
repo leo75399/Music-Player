@@ -15,14 +15,16 @@ import WaveInif from './playing/WaveInif'
 import Duration from './playing/Duration' //轉換時間
 
 function Playing(props) {
-  // const [dataLoading, setDataLoading] = useState(true)
   const didMountRef = useRef(false) //didupdate
-
   //[狀態]音樂資料
-  const [playlistName, setPlaylistName] = useState([]) //歌曲清單名稱陣列
+  const [playlistName, setPlaylistName] = useState({
+    playlist_name: '舞力健身',
+    playlist_image: '/playlist/cover1.jpg',
+  }) //歌曲清單名稱陣列
   const [playlist, setPlaylist] = useState([]) //歌曲陣列清單
   const [lyric, setLyric] = useState([]) //歌詞陣列
   const [nowLyric, setNowLyric] = useState([{ index: 0 }]) //當前歌詞陣列
+  const [order, setOrder] = useState(0) //第幾首歌
   //[狀態]播放操控
   const audioPlayer = useRef() //audio player
   const [loop, setLoop] = useState(false) //重複播放
@@ -32,24 +34,24 @@ function Playing(props) {
   const [duration, setDuration] = useState('') //整首歌曲時間
   const [seekStatus, setSeekStatus] = useState(false) //拉動播放吧
   const [seekValue, setSeekValue] = useState('') //拉動播放吧後的值
+  const audioRef = useRef(null) // 用于追踪 audio 元素
+
   //[狀態]介面
   const [wave] = useState(new Wave()) //左方的music flow
-  const [playlistView, setplaylistView] = useState(false)
+  const [playlistView, setplaylistView] = useState(false) //側邊欄
   const [mobilePlayer, setmobilePlayer] = useState(false)
   const leoPlaypageMusiclist = useRef()
   const leosongtime = useRef()
-  //網址querystring處理
-  const urlSearchParams = new URLSearchParams(window.location.search)
-  let urlPlaylist = urlSearchParams.get('playlist') //抓到URL中的oredr
-  let urlOrder = urlSearchParams.get('order') //抓到URL中的oredr
 
+  //網址querystring處理
+  // const urlSearchParams = new URLSearchParams(window.location.search)
+  // let urlPlaylist = urlSearchParams.get('playlist') //抓到URL中的oredr
+  // let urlOrder = urlSearchParams.get('order') //抓到URL中的oredr
+  // urlOrder = 0
   // didMount
   useEffect(() => {
     console.log('componentDidMount')
     fetchPlayList() //取得歌曲列表陣列
-    // setTimeout(() => {
-    //   setDataLoading(false)
-    // }, 2000)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   // didMount結束後馬上didupdate
@@ -58,8 +60,7 @@ function Playing(props) {
       console.log('componentDidUpdate')
       setPlaypageMainHeight() //設定中間內容的高度
       leoPlaypageMusiclist.current.classList.add('leo_playpage_musiclist_none') //幫加上class
-      waveConnectToFlow() //將左邊動畫flow綁定給audio
-      // TODO:
+      // waveConnectToFlow() //將左邊動畫flow綁定給audio
       window.addEventListener('resize', setPlaypageMainHeight) //視窗變化時執行綁定
     } else {
       didMountRef.current = true
@@ -76,41 +77,83 @@ function Playing(props) {
 
   //取得歌曲列表陣列(didMount)，並且設定當前播放歌曲
   function fetchPlayList() {
-    fetch(`${process.env.PUBLIC_URL}/playlist.json`, {
-      method: 'GET',
-    })
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (jsonData) {
-        // 處理資料
-        setPlaylistName(jsonData[0])
-        let playlistArray = jsonData[1]
-        setPlaylist(playlistArray)
-        let nowPlaying = playlistArray[urlOrder] //取得當前播需播放歌曲
-        setLeftRecordImage(nowPlaying['image']) //設定左方唱片圖片
-        fetchLyric(nowPlaying['lyric']) //取得vtt歌詞
-      })
-      .catch(function (err) {
-        console.log(err)
-      })
+    let data = [
+      {
+        id: '0',
+        name: 'Lost Cause',
+        singer: 'Billie Eilish',
+        time: '03:48',
+        image: `${process.env.PUBLIC_URL}/image/BillieEilishLostCause.jpeg`,
+        file: `${process.env.PUBLIC_URL}/file/BillieEilishLostCause.mp3`,
+        lyric: '/lyric/BillieEilishLostCause.vtt',
+      },
+      {
+        id: '1',
+        name: 'Shape of You',
+        singer: 'Ed Sheeran',
+        time: '04:23',
+        image: `${process.env.PUBLIC_URL}/image/EdSheeranShapeofYou.jpg`,
+        file: `${process.env.PUBLIC_URL}/file/EdSheeranShapeofYou.mp3`,
+        lyric: '/lyric/EdSheeranShapeofYou.vtt',
+      },
+      {
+        id: '2',
+        name: 'For Tonight',
+        singer: 'Giveon',
+        time: '03:22',
+        image: `${process.env.PUBLIC_URL}/image/GiveonForTonight.png`,
+        file: `${process.env.PUBLIC_URL}/file/GiveonForTonight.mp3`,
+        lyric: '/lyric/GiveonForTonight.vtt',
+      },
+      {
+        id: '3',
+        name: 'Uptown Funk',
+        singer: 'Mark Ronson',
+        time: '04:30',
+        image: `${process.env.PUBLIC_URL}/image/MarkRonsonUptownFunk.jpeg`,
+        file: `${process.env.PUBLIC_URL}/file/MarkRonsonUptownFunk.mp3`,
+        lyric: '/lyric/MarkRonsonUptownFunk.vtt',
+      },
+      {
+        id: '4',
+        name: 'Lost Stars',
+        singer: 'Adam Levine',
+        time: '04:34',
+        image: `${process.env.PUBLIC_URL}/image/AdamLevineLostStars.jpg`,
+        file: `${process.env.PUBLIC_URL}/file/AdamLevineLostStars.mp3`,
+        lyric: '/lyric/AdamLevineLostStars.vtt',
+      },
+    ]
+    setPlaylist(data)
+
+    let nowPlaying = data[order] //取得當前播需播放歌曲
+    setLeftRecordImage(nowPlaying['image']) //設定左方唱片圖片
+    fetchLyric(nowPlaying['lyric']) //取得vtt歌詞
   }
+
   let audioName
   const [waveCanvasName, setWaveCanvasName] = useState('') //canvas 的id
-
   //將左邊動畫flow綁定給audio(didupdate)
   function waveConnectToFlow() {
-    audioName = `leoReactPlayerAudio${Math.ceil(Math.random() * 100000)}`
-    let waveName = `leoReactPlayerWave${Math.ceil(Math.random() * 100000)}`
-    setWaveCanvasName(waveName)
+    if (audioRef.current) {
+      if (!audioRef.current.isConnectedToWave) {
+        const audioName = `leoReactPlayerAudio${Math.ceil(
+          Math.random() * 100000
+        )}`
+        const waveName = `leoReactPlayerWave${Math.ceil(
+          Math.random() * 100000
+        )}`
+        setWaveCanvasName(waveName)
 
-    document
-      .querySelector('#leoReactPlayer audio')
-      .setAttribute('id', audioName)
-    wave.fromElement(audioName, waveName, {
-      type: 'flower',
-      colors: ['#E88239'],
-    })
+        audioRef.current.id = audioName // 设置 audio 元素的 ID
+        wave.fromElement(audioName, waveName, {
+          type: 'flower',
+          colors: ['#E88239'],
+        })
+
+        audioRef.current.isConnectedToWave = true // 标记已经连接
+      }
+    }
   }
   //設定左方唱片圖片(fetchPlayList)
   function setLeftRecordImage(imageLocation) {
@@ -119,10 +162,8 @@ function Playing(props) {
   }
   //取得vtt歌詞(fetchPlayList)
   function fetchLyric(lyricLocation) {
-    // parseToLyrics(`${process.env.PUBLIC_URL}/${lyricLocation}`)
     const publicUrl = process.env.PUBLIC_URL || ''
     const url = `${publicUrl}${lyricLocation}`
-    console.log('Fetching lyric from URL:', url)
     fetch(url, {
       method: 'get',
     })
@@ -191,7 +232,7 @@ function Playing(props) {
   }
   //下一首歌
   function nextSong() {
-    let newUrlOrder = urlOrder * 1 + 1
+    let newUrlOrder = order + 1
     if (newUrlOrder > playlist.length - 1) {
       return alert('最後一首了')
     }
@@ -200,19 +241,15 @@ function Playing(props) {
 
   //上一首歌
   function previousSong() {
-    let newUrlOrder = urlOrder * 1 - 1
+    let newUrlOrder = order - 1
     if (newUrlOrder < 0) {
-      return alert('這是第一手')
+      return alert('這是第一首')
     }
     changeSong(newUrlOrder)
   }
   //換歌方法
   function changeSong(newUrlOrder) {
-    window.history.pushState(
-      '',
-      '',
-      `${window.location.pathname}?playlist=${urlPlaylist}&order=${newUrlOrder}`
-    )
+    setOrder(newUrlOrder)
     let nowPlaying = playlist[newUrlOrder]
     setLeftRecordImage(nowPlaying['image'])
     fetchLyric(nowPlaying['lyric'])
@@ -229,12 +266,19 @@ function Playing(props) {
         url={
           ///決定要放什麼音樂
           playlist.length > 0
-            ? playlist[urlOrder]['file']
+            ? playlist[order]['file']
             : 'https://leo75399.github.io/audio-player/music/Billie%20Eilish%20-%20Lost%20Cause%20(Official%20Music%20Video).mp3'
         }
         width="0"
         height="0"
         playing={play}
+        onReady={() => {
+          const internalPlayer = audioPlayer.current.getInternalPlayer()
+          if (internalPlayer && !audioRef.current) {
+            audioRef.current = internalPlayer
+            waveConnectToFlow()
+          }
+        }}
         onEnded={function () {
           //歌曲結束
           nextSong()
@@ -277,21 +321,18 @@ function Playing(props) {
           <div className="leo_playlist_cover">
             <div className="leo_playlist_cover_left">
               <img
-                src={
-                  playlistName.length > 0 ? playlistName[0].playlist_image : ''
-                }
+                src={`${
+                  process.env.PUBLIC_URL + playlistName['playlist_image']
+                }`}
                 alt=""
               />
             </div>
             <div className="leo_playlist_cover_right">
-              <h3>
-                {playlistName.length > 0 ? playlistName[0].playlist_name : ''}
-              </h3>
+              <h3>{playlistName.playlist_name}</h3>
               <p>共{playlist.length}首歌</p>
             </div>
           </div>
           <h2>待播清單</h2>
-
           <ul>
             {playlist.map((obj, index) => {
               return (
@@ -375,33 +416,32 @@ function Playing(props) {
             <div className="leo_player_left">
               <div className="leo_player_left_photo">
                 <img
-                  src={playlist.length > 0 ? playlist[urlOrder]['image'] : ''}
+                  src={playlist.length > 0 ? playlist[order]['image'] : ''}
                   alt=""
                 />
               </div>
               <div className="leo_player_left_text">
-                {/* TODO: */}
                 <h3
                   onClick={() => {
                     setPlayed(84)
                     audioPlayer.current.seekTo(84)
                   }}
                 >
-                  {playlist.length > 0 ? playlist[urlOrder]['name'] : '載入中'}
+                  {playlist.length > 0 ? playlist[order]['name'] : '載入中'}
                 </h3>
-                <p>{playlist.length > 0 ? playlist[urlOrder]['singer'] : ''}</p>
+                <p>{playlist.length > 0 ? playlist[order]['singer'] : ''}</p>
               </div>
             </div>
             <div className="leo_player_mid">
               <ul>
-                <li>
+                {/* <li>
                   <button>
                     <img
                       src={require('./image/playericon/shuffle.svg').default}
                       alt=""
                     />
                   </button>
-                </li>
+                </li> */}
                 <li>
                   <button onClick={previousSong}>
                     <img
@@ -545,15 +585,15 @@ function Playing(props) {
           <div className="leo_player_mobile_left">
             <div className="leo_player_photo">
               <img
-                src={playlist.length > 0 ? playlist[urlOrder]['image'] : ''}
+                src={playlist.length > 0 ? playlist[order]['image'] : ''}
                 alt=""
               />
             </div>
             <div className="leo_player_left_text">
               <h3>
-                {playlist.length > 0 ? playlist[urlOrder]['name'] : '載入中'}
+                {playlist.length > 0 ? playlist[order]['name'] : '載入中'}
               </h3>
-              <p>{playlist.length > 0 ? playlist[urlOrder]['singer'] : ''}</p>
+              <p>{playlist.length > 0 ? playlist[order]['singer'] : ''}</p>
             </div>
           </div>
           <div className="leo_player_mobile_right">

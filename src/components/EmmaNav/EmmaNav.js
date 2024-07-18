@@ -32,7 +32,7 @@ function EmmaNav({
   // 2. fix active state 'active' : '' -done
   // 3. li_maxWidth 內縮 -待辦
   // 4. 左下角的link 判斷問題 -待辦
-  const [navColor, setNavColor] = useState(location.pathname.slice(1))
+  const [navColor, setNavColor] = useState('Beat It')
 
   // NOTE 10/31 added by Joey : just in case history.push change the pathname
   useEffect(() => {
@@ -112,15 +112,10 @@ function EmmaNav({
               >
                 Customized
               </Nav.Link>
-
               <Nav.Link
-                className={
-                  navColor === 'Beat It' || navColor === ''
-                    ? 'j-nav-active'
-                    : ''
-                }
+                className={navColor === 'Beat It' ? 'j-nav-active' : ''}
                 as={NavLink}
-                to="/audio"
+                to="/"
                 onClick={() => setNavColor('Beat It')} // 在這邊控active class state
               >
                 Beat It

@@ -5,6 +5,8 @@
   },
   [
     {
+      "id": "0",
+
       "name": "Lost Cause",
       "singer": "Billie Eilish",
       "time": "03:48",
@@ -12,7 +14,8 @@
       "file": "/file/BillieEilishLostCause.mp3",
       "lyric": "/lyric/BillieEilishLostCause.vtt"
     },
-    {
+    {      "id": "1",
+
       "name": "Shape of You",
       "singer": "Ed Sheeran",
       "time": "04:23",
@@ -21,6 +24,8 @@
       "lyric": "/lyric/EdSheeranShapeofYou.vtt"
     },
     {
+      "id": "2",
+
       "name": "For Tonight",
       "singer": "Giveon",
       "time": "03:22",
@@ -29,6 +34,8 @@
       "lyric": "/lyric/GiveonForTonight.vtt"
     },
     {
+      "id": "3",
+
       "name": "Uptown Funk",
       "singer": "Mark Ronson",
       "time": "04:30",
@@ -38,6 +45,8 @@
     },
 
     {
+      "id": "4",
+
       "name": "Lost Stars",
       "singer": "Adam Levine",
       "time": "04:34",

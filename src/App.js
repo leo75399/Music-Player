@@ -329,7 +329,7 @@ const App = () => {
             {/* Joey part end */}
 
             {/* Leo part start */}
-            <Route path="/audio/playing">
+            {/* <Route path="/audio/playing">
               <Playing />
             </Route>
             <Route path="/audio/playlist">
@@ -337,12 +337,12 @@ const App = () => {
             </Route>
             <Route path="/audio">
               <Audio />
-            </Route>
+            </Route> */}
             {/* Leo part end */}
 
             {/* emma part start */}
             <Route path="/">
-              <Audio />
+              <Playing />
             </Route>
             {/* emma part end */}
           </Switch>
