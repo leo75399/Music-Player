@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Music-Player/static/css/main.af203791.chunk.css",
-    "main.js": "/Music-Player/static/js/main.965f06a1.chunk.js",
-    "main.js.map": "/Music-Player/static/js/main.965f06a1.chunk.js.map",
+    "main.css": "/Music-Player/static/css/main.377fa5c8.chunk.css",
+    "main.js": "/Music-Player/static/js/main.af50b4c0.chunk.js",
+    "main.js.map": "/Music-Player/static/js/main.af50b4c0.chunk.js.map",
     "runtime-main.js": "/Music-Player/static/js/runtime-main.9a0bb695.js",
     "runtime-main.js.map": "/Music-Player/static/js/runtime-main.9a0bb695.js.map",
     "static/css/2.7020e519.chunk.css": "/Music-Player/static/css/2.7020e519.chunk.css",
-    "static/js/2.60206cd6.chunk.js": "/Music-Player/static/js/2.60206cd6.chunk.js",
-    "static/js/2.60206cd6.chunk.js.map": "/Music-Player/static/js/2.60206cd6.chunk.js.map",
+    "static/js/2.9012cf4e.chunk.js": "/Music-Player/static/js/2.9012cf4e.chunk.js",
+    "static/js/2.9012cf4e.chunk.js.map": "/Music-Player/static/js/2.9012cf4e.chunk.js.map",
     "index.html": "/Music-Player/index.html",
     "static/css/2.7020e519.chunk.css.map": "/Music-Player/static/css/2.7020e519.chunk.css.map",
-    "static/css/main.af203791.chunk.css.map": "/Music-Player/static/css/main.af203791.chunk.css.map",
-    "static/js/2.60206cd6.chunk.js.LICENSE.txt": "/Music-Player/static/js/2.60206cd6.chunk.js.LICENSE.txt",
+    "static/css/main.377fa5c8.chunk.css.map": "/Music-Player/static/css/main.377fa5c8.chunk.css.map",
+    "static/js/2.9012cf4e.chunk.js.LICENSE.txt": "/Music-Player/static/js/2.9012cf4e.chunk.js.LICENSE.txt",
     "static/media/1.f4124c1c.jpg": "/Music-Player/static/media/1.f4124c1c.jpg",
     "static/media/2.17721210.jpg": "/Music-Player/static/media/2.17721210.jpg",
     "static/media/3.e002ecb9.jpg": "/Music-Player/static/media/3.e002ecb9.jpg",
@@ -53,7 +53,6 @@
     "static/media/pause.svg": "/Music-Player/static/media/pause.be41c425.svg",
     "static/media/play.svg": "/Music-Player/static/media/play.5d8cb6d1.svg",
     "static/media/puma.f8366daf.svg": "/Music-Player/static/media/puma.f8366daf.svg",
-    "static/media/shuffle.svg": "/Music-Player/static/media/shuffle.8c076a3a.svg",
     "static/media/slick-theme.css": "/Music-Player/static/media/slick.c94f7671.ttf",
     "static/media/sound.svg": "/Music-Player/static/media/sound.8fe138a8.svg",
     "static/media/under-armour.e7cf2541.svg": "/Music-Player/static/media/under-armour.e7cf2541.svg",
@@ -63,8 +62,8 @@
   "entrypoints": [
     "static/js/runtime-main.9a0bb695.js",
     "static/css/2.7020e519.chunk.css",
-    "static/js/2.60206cd6.chunk.js",
-    "static/css/main.af203791.chunk.css",
-    "static/js/main.965f06a1.chunk.js"
+    "static/js/2.9012cf4e.chunk.js",
+    "static/css/main.377fa5c8.chunk.css",
+    "static/js/main.af50b4c0.chunk.js"
   ]
 }
