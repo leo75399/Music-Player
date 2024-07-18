@@ -1,0 +1,49 @@
+[
+  {
+    "playlist_name": "舞力健身",
+    "playlist_image": "/playlist/cover1.jpg"
+  },
+  [
+    {
+      "name": "Lost Cause",
+      "singer": "Billie Eilish",
+      "time": "03:48",
+      "image": "/image/BillieEilishLostCause.jpeg",
+      "file": "/file/BillieEilishLostCause.mp3",
+      "lyric": "/lyric/BillieEilishLostCause.vtt"
+    },
+    {
+      "name": "Shape of You",
+      "singer": "Ed Sheeran",
+      "time": "04:23",
+      "image": "/image/EdSheeranShapeofYou.jpg",
+      "file": "/file/EdSheeranShapeofYou.mp3",
+      "lyric": "/lyric/EdSheeranShapeofYou.vtt"
+    },
+    {
+      "name": "For Tonight",
+      "singer": "Giveon",
+      "time": "03:22",
+      "image": "/image/GiveonForTonight.png",
+      "file": "/file/GiveonForTonight.mp3",
+      "lyric": "/lyric/GiveonForTonight.vtt"
+    },
+    {
+      "name": "Uptown Funk",
+      "singer": "Mark Ronson",
+      "time": "04:30",
+      "image": "/image/MarkRonsonUptownFunk.jpeg",
+      "file": "/file/MarkRonsonUptownFunk.mp3",
+      "lyric": "/lyric/MarkRonsonUptownFunk.vtt"
+    },
+
+    {
+      "name": "Lost Stars",
+      "singer": "Adam Levine",
+      "time": "04:34",
+      "image": "/image/AdamLevineLostStars.jpg",
+      "file": "/file/AdamLevineLostStars.mp3",
+      "lyric": "/lyric/AdamLevineLostStars.vtt"
+    }
+  ]
+]
